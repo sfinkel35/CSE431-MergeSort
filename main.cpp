@@ -57,7 +57,6 @@ void mergeSort(std::vector<int>& arr, int left, int right) {
 }
 
 int main() {
-    std::clock_t start_time = std::clock();
     int n;
     std::cout << "Enter number of elements: ";
     std::cin >> n;
@@ -66,8 +65,9 @@ int main() {
     std::cout << "Enter " << n << " elements:\n";
     for(int i = 0; i < n; i++)
         std::cin >> arr[i];
-
+    std::clock_t start_time = std::clock();
     mergeSort(arr, 0, n - 1);
+    std::clock_t tot_time = std::clock() - start_time;
 
     std::cout << "Sorted array is \n";
     for(int i = 0; i < n; i++)
